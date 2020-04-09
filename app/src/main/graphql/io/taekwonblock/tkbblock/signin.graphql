@@ -1,0 +1,25 @@
+mutation signInMobile(
+    $openId: ID!,
+    $unionId: ID!,
+    $name: String!,
+    $age: Int,
+    $address: String!,
+    $phone: String!,
+    $account_type: Int,
+) {
+    signInMobile(
+        openId: $openId,
+        unionId: $unionId,
+        name: $name,
+        age: $age,
+        address: $address,
+        phone: $phone
+        account_type: $account_type
+    ) {
+        status
+        message
+    }
+
+
+
+}

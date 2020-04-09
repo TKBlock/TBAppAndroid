@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:id="@+id/home_dojo_name"
+        android:textStyle="bold"
+
+        android:text="도장 이름"
+        android:textColor="#000000"
+        android:textSize="20dp"
+        android:paddingVertical="8dp"
+        android:paddingLeft="8dp"
+
+        />
+
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="144dp"
+
+        android:id="@+id/home_dojo_images"
+
+        android:background="@color/colorPrimary"
+        />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:textStyle="bold"
+
+        android:id="@+id/home_dojo_courses"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:id="@+id/home_dojo_no_course"
+
+        android:textStyle="bold"
+
+        android:text="수강중인 과정이 없습니다"
+
+        android:gravity="center"
+
+        android:textSize="20dp"
+        android:paddingVertical="8dp"
+        android:paddingLeft="8dp"
+
+        />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:id="@+id/home_dojo_go_course"
+
+        android:text="과정 조회 / 신청 "
+        android:textColor="#000000"
+        android:textSize="20dp"
+
+        android:gravity="center"
+
+
+        />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+
+        android:layout_marginTop="12dp"
+
+        android:id="@+id/dojoinfo_phone_line"
+
+        android:background="#BBBBBB"
+
+        />
+
+</LinearLayout>

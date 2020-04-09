@@ -1,0 +1,55 @@
+query Certificates($uuid: ID!) {
+    certificates(uuid: $uuid) {
+        IDX
+        cert_name
+        images
+    }
+}
+
+mutation CreateCertificate(
+    $uuid: ID!,
+    $cert_name: String!
+    $images: [Upload]
+) {
+    createCertificate(
+        uuid: $uuid
+        cert_name: $cert_name
+        images: $images
+    )
+    {
+        status
+        message
+    }
+}
+
+mutation UpdateCertificate(
+    $cert_idx: ID!,
+    $uuid: ID!,
+    $cert_name: String!,
+    $images: [Upload]
+) {
+    updateCertificate(
+        cert_idx: $cert_idx
+        uuid: $uuid,
+        cert_name: $cert_name,
+        images: $images
+    )
+    {
+        status
+        message
+    }
+}
+
+mutation DeleteCertificate(
+    $cert_idx: ID!,
+    $uuid: ID!
+) {
+    deleteCertificate(
+        cert_idx: $cert_idx
+        uuid: $uuid
+    )
+    {
+        status
+        message
+    }
+}

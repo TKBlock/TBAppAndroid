@@ -1,0 +1,57 @@
+query Dojos {
+    dojos {
+        IDX
+        web_user_uuid
+        dojo_name
+        manager
+        address
+        phone
+        description
+        images
+    }
+}
+
+query SearchDojoName($keyword: String) {
+    searchDojoName(keyword: $keyword) {
+        IDX
+        web_user_uuid
+        dojo_name
+        manager
+        address
+        phone
+        description
+        images
+    }
+}
+
+query RegistratedDojo($mobile_user_uuid: ID!) {
+    registratedDojo(mobile_user_uuid: $mobile_user_uuid) {
+        IDX
+        web_user_uuid
+        dojo_name
+        manager
+        address
+        phone
+        description
+        images
+        courses {
+            course_name
+            manager
+            images
+            description
+        }
+    }
+}
+
+query JoinedDojo($mobile_user_uuid: ID!) {
+    joinedDojo(mobile_user_uuid: $mobile_user_uuid) {
+        IDX
+        web_user_uuid
+        dojo_name
+        manager
+        address
+        phone
+        description
+        images
+    }
+}

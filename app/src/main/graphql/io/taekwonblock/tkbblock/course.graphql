@@ -1,0 +1,61 @@
+query Courses($dojo_uuid: ID!) {
+    courses(dojo_uuid: $dojo_uuid) {
+        IDX
+        course_name
+        manager
+        images
+        description
+    }
+}
+
+query CoursesWithState(
+    $dojo_uuid: ID!
+    $user_uuid: ID!
+) {
+    coursesWithState(
+        dojo_uuid: $dojo_uuid
+        user_uuid: $user_uuid
+    ) {
+        IDX
+        course_name
+        manager
+        images
+        description
+        state
+    }
+}
+
+
+query EnrollmentForMobile(
+    $user_uuid : ID!, $state : Int
+) {
+    enrollmentForMobile(
+        user_uuid: $user_uuid
+        state: $state
+    )
+    {
+        course_IDX
+        dojo_uuid
+        user_uuid
+        state
+        fixed_name
+        registered_date
+        start_date
+        end_date
+        removed_date
+    }
+}
+
+mutation EnrollCourse(
+    $user_uuid : ID!, $dojo_uuid: ID!, $course_idx: ID!
+) {
+    createEnrollment(
+        course_idx: $course_idx
+        dojo_uuid: $dojo_uuid
+        user_uuid: $user_uuid
+    )
+    {
+        status
+        message
+    }
+}

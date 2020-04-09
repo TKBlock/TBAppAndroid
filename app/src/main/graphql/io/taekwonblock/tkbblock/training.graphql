@@ -1,0 +1,54 @@
+mutation RegistrateDojo(
+    $user_uuid: ID!,
+    $dojo_uuid: ID!
+) {
+    registrateDojo(
+        user_uuid: $user_uuid
+        dojo_uuid: $dojo_uuid
+    )
+    {
+        status
+        message
+    }
+}
+
+query DojoRegState(
+    $dojo_uuid: ID!,
+    $user_uuid: ID!
+) {
+    dojoRegState(
+        dojo_uuid: $dojo_uuid,
+        user_uuid: $user_uuid
+    )
+    {
+        dojo_uuid
+        state
+    }
+}
+
+query HistoriesForStudent(
+    $user_uuid: ID!
+) {
+    historiesForStudent (
+        user_uuid: $user_uuid
+    ) {
+        dojo_name
+        course_name
+        start_date
+        end_date
+    }
+}
+
+
+query HistoriesForInstructor(
+    $user_uuid: ID!
+) {
+    historiesForInstructor (
+        user_uuid: $user_uuid
+    ) {
+        dojo_name
+        course_name
+        start_date
+        end_date
+    }
+}

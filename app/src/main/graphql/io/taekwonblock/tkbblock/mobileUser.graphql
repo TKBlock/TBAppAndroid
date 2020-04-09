@@ -1,0 +1,33 @@
+query MobileUser($uuid: ID!, $type: Int!) {
+    mobileUser(uuid: $uuid, type: $type) {
+        name
+        age
+        address
+        phone
+    }
+}
+
+mutation UpdateMobileUserInfo(
+    $uuid: ID!,
+    $account_type: Int!,
+    $name: String!,
+    $age: Int,
+    $address: String!,
+    $phone: String!,
+
+) {
+    updateMobileUserInfo(
+        uuid: $uuid,
+        account_type: $account_type,
+        name: $name,
+        age: $age,
+        address: $address,
+        phone: $phone
+    ) {
+        status
+        message
+    }
+
+
+
+}

@@ -1,0 +1,14 @@
+query weixinLogin($appid: ID!, $code: String!) {
+    weixinLogin(
+        appid: $appid,
+        code: $code) {
+        openid
+        unionid
+        access_token
+        refresh_token
+        uuid
+        type
+        name
+        hasAccount
+    }
+}

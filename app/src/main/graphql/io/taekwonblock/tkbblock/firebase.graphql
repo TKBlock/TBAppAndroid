@@ -1,0 +1,14 @@
+query GoogleLogin(
+    $email: ID,
+    $innerID: ID,
+) {
+    googleLogin(
+        email: $email,
+        innerID: $innerID,
+    ) {
+        uuid
+        type
+        name
+        hasAccount
+    }
+}
